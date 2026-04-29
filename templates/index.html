@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flappy Bird - Web Edition</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="game-container">
+        <canvas id="gameCanvas" width="400" height="600"></canvas>
+        <div class="ui-layer" id="uiLayer">
+            <!-- Start Screen -->
+            <div id="startScreen" class="screen active">
+                <h1>FLAPPY BIRD</h1>
+                <p>Press SPACE or Click to Start</p>
+                <div class="high-score-display">Highest Score: <span id="highestScoreDisplay">0</span></div>
+            </div>
+
+            <!-- Game Over Screen -->
+            <div id="gameOverScreen" class="screen">
+                <h1 class="game-over-text">GAME OVER</h1>
+                <div class="score-board">
+                    <p>Score: <span id="finalScore">0</span></p>
+                    <p>Best: <span id="bestScore">0</span></p>
+                </div>
+                <button id="restartBtn">Restart</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- The actual game engine script -->
+    <script src="{{ url_for('static', filename='js/game.js') }}"></script>
+</body>
+</html>
